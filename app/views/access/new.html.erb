@@ -1,0 +1,25 @@
+<!-- access new : admin user login -->
+<div class="order_form">
+  <% if flash[:notice] %>
+    <p id="notice"><%= flash[:notice] %></p>
+  <% end %>
+  <h1>Default Account</h1>
+  <h1>name: howard </h1>
+  <h1>password: scu123</h1>
+  <%= form_tag access_create_path do %>
+      <fieldset>
+        <legend>Log In</legend>
+        <div style="float: left">
+          <%= label_tag :name, 'Name:' %>
+          <%= text_field_tag :name, params[:name] %>
+        </div>
+        <div style="float: left">
+          <%= label_tag :password, 'Password:' %>
+          <%= password_field_tag :password, params[:password] %>
+        </div>
+        <div>
+          <%= submit_tag "Login" %>
+        </div>
+      </fieldset>
+  <% end %>
+</div>
